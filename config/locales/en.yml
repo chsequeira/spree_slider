@@ -14,12 +14,14 @@ en:
 
   activerecord:
     models:
-      spree/slide: "Slide"
+      spree/slide:
+        one: Slide
+        other: Slides
 
   spree_slider:
     config_name: "Spree Slider"
     config_description: "Manage Spree Slider contents"
-    title: "Slides"
+    title: "Banners"
     new_slide: "New Slide"
     editing_slide: "Editing Slide"
     back_to_slides: "Back to Slides"
