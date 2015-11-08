@@ -1,5 +1,11 @@
-<% if can? :admin, Spree::Slide %>
+<% if is_super_admin? %>
   <ul class="nav nav-sidebar">
     <%= main_menu_tree plural_resource_name(Spree::Slide), icon: "picture", sub_menu: "slide", url: "#sidebar-slide" %>
   </ul>
+<% else %>
+  <% if can? :admin, Spree::Slide %>
+    <ul class="nav nav-sidebar">
+      <%= tab Spree::Slide, url: spree.admin_slides_url, icon: 'picture', label: plural_resource_name(Spree::Slide) %>
+    </ul>
+  <% end %>
 <% end %>
