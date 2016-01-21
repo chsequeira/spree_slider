@@ -1,4 +1,6 @@
-class Spree::Slide < ActiveRecord::Base
+class Spree::Slide < Spree::Base
+
+  self.whitelisted_ransackable_attributes = ['name']
 
   has_and_belongs_to_many :slide_locations, 
                           class_name: 'Spree::SlideLocation', 
